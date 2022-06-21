@@ -1,0 +1,32 @@
+<div *ngIf="hero">
+  <h2>{{hero.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{hero.id}}</div>
+  <div>
+    <label for="hero-name">Hero name: </label>
+    <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name"/>
+  </div>
+
+  <div *ngIf="image">
+    <img class = "imagen" src="{{image}}"/>
+  </div>
+
+  <h4> PODERES: </h4>
+  <div *ngFor="let poderes of hero.power">
+    {{ poderes }}
+    <button type="button" (click)="deletePower(poderes)"> X </button>
+  </div>
+
+  <div>
+    <label for="hero-power"> Poder: </label>
+    <input id="hero-power" placeholder="Introduzca el poder nuevo"/>
+  </div>
+
+  <button type="button" (click)="addPower()">Añadir poder nuevo</button>
+  <button type="button" (click)="goBack()">Volver</button>
+  <button type="button" (click)="save()">Guardar</button>
+</div>
+
+
+
+
+
